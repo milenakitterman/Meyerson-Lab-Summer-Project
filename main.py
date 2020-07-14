@@ -1,13 +1,10 @@
 #!/usr/bin/env python3
 import sys
 import re
-# you might want to know the difference of "from x import y" and "import x"
 from sam import SamLine
 
 def main():
-  # a very basic argument parsing
   if len(sys.argv) < 2:
-    # sys.stdout is like "print". just my personal preference
     sys.stdout.write("Usage: %s <input.sam>\n"%sys.argv[0])
     # exit the program if no argument was provided. this is a convention for
     # programs, because users usually want to try to run the program without
