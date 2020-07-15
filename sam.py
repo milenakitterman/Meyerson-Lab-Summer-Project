@@ -48,13 +48,9 @@ class SamLine:
     return output_seq
   
 def findReverseComplement(seq):
-  dna = [char for char in seq]
   comp= {'A':'T', 'G':'C', 'T':'A', 'C':'G', 'a':'t', 'g':'c', 't':'a', 'c':'g', 'N':'N', '.':'.'}
-  complist = []
-  for val in dna:
-    complist.append(comp[val])
-  revcomplist = complist[::-1]
-  revcomp = ""
-  return(revcomp.join(revcomplist))
+  dna = [comp[char] for char in seq[::-1]]
+  return "".join(dna)
+
 
 
