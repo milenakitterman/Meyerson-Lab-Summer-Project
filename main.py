@@ -29,10 +29,7 @@ def main():
     for num, op in ops:
       if op == "S":
         b = num
-    if sam_read.isReverseComplemented():
-      x = sam_read.findReverseComplement()
-    else:
-      x = sam_read.applyCIGAR()
+    x = sam_read.applyCIGAR()
     if x[1].islower():
       a = a-b
     sys.stdout.write("".join((sam_read.qname, " " * a, x))+"\n")
