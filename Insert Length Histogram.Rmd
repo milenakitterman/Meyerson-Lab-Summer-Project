@@ -1,14 +1,12 @@
 ```{r}
 data1 <- scan(file="TLEN.txt", what="integer")
 data1 <- as.numeric(data1)
-vector = c()
-p05 = quantile(data1, probs = .05)
-p95 = quantile(data1, probs = .95)
-for (a in data1) {
-  if (a<p95&a>p05) {
-    vector <- c(vector, a)
-  }
-}
+q <- unname(quantile(data1, probs=c(0.05, 0.95)))
+finaldata <- data1[which(data1 >= q[1] & data1 <= q[2])]
+hist(finaldata, main = "Distribution of Insert Length", breaks = 100, xlab = "Insert Length (bp)", xlim = c(0, 500))
+```
+
+```{r}
 hist(vector, main = "Distribution of Insert Length", breaks = 100, xlab = "Insert Length (bp)", xlim = c(0, 500))
 ```
 
