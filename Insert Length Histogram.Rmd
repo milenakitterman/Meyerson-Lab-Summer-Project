@@ -1,0 +1,20 @@
+```{r}
+data1 <- scan(file="TLEN.txt", what="integer")
+data1 <- as.numeric(data1)
+vector = c()
+p05 = quantile(data1, probs = .05)
+p95 = quantile(data1, probs = .95)
+for (a in data1) {
+  if (a<p95&a>p05) {
+    vector <- c(vector, a)
+  }
+}
+hist(vector, main = "Distribution of Insert Length", breaks = 100, xlab = "Insert Length (bp)", xlim = c(0, 500))
+```
+
+
+
+
+
+
+
