@@ -7,8 +7,11 @@ hist(finaldata, main = "Distribution of Insert Length", breaks = 100, xlab = "In
 ```
 
 ```{r}
-hist(vector, main = "Distribution of Insert Length", breaks = 100, xlab = "Insert Length (bp)", xlim = c(0, 500))
+a <- read.csv("Table.txt")
+print(a)
+hist(library$TLEN)
 ```
+
 
 
 
